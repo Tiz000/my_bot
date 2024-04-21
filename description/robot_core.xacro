@@ -10,6 +10,9 @@
     <xacro:property name="wheel_radius" value="0.08"/>
     <xacro:property name="wheel_thickness" value="0.03"/>
     <xacro:property name="wheel_mass" value="0.05"/>
+    <xacro:property name="lidar_height" value="0.03"/>
+    <xacro:property name="lidar_radius" value="0.05"/>
+    <xacro:property name="lidar_mass" value="0.2"/>
 
     <material name="white">
         <color rgba="1 1 1 1" />
@@ -74,6 +77,37 @@
         <xacro:inertial_box mass="${chassis_mass}" x="${chassis_length}" y="${chassis_width}" z="${chassis_height}">
             <origin xyz="0 0 0" rpy="0 0 0"/>
         </xacro:inertial_box>
+    </link>
+
+    <gazebo reference="chassis">
+        <material>Gazebo/Orange</material>
+    </gazebo>
+
+        <!-- LIDAR LINK -->
+
+    <joint name="lidar_joint" type="fixed">
+        <parent link="chassis"/>
+        <child link="lidar"/>
+        <origin xyz="0 0 ${chassis_height/2+lidar_height/2}"/>
+    </joint>
+
+    <link name="lidar">
+        <visual>
+            <origin xyz="0 0 0"/>
+            <geometry>
+                <cylinder radius="${lidar_radius}" length="${lidar_height}"/>
+            </geometry>
+            <material name="white"/>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0"/>
+            <geometry>
+                <cylinder radius="${lidar_radius}" length="${lidar_height}"/>
+            </geometry>
+        </collision>
+        <xacro:inertial_cylinder mass="${lidar_mass}" length="${lidar_height}" radius="${lidar_radius}">
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+        </xacro:inertial_cylinder>
     </link>
 
     <gazebo reference="chassis">

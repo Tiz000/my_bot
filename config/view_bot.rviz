@@ -111,6 +111,8 @@ Visualization Manager:
           Value: true
         left_wheel_p:
           Value: true
+        lidar:
+          Value: true
         right_wheel:
           Value: true
         right_wheel_p:
@@ -125,7 +127,8 @@ Visualization Manager:
           base_footprint:
             {}
           chassis:
-            {}
+            lidar:
+              {}
           left_wheel:
             {}
           left_wheel_p:
@@ -173,6 +176,11 @@ Visualization Manager:
           Show Trail: false
           Value: true
         left_wheel_p:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        lidar:
           Alpha: 1
           Show Axes: false
           Show Trail: false
@@ -241,25 +249,25 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz_default_plugins/Orbit
-      Distance: 1.7135343551635742
+      Distance: 1.5079102516174316
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
         Swap Stereo Eyes: false
         Value: false
       Focal Point:
-        X: -0.12911483645439148
-        Y: -0.12233909964561462
-        Z: -0.03828437626361847
+        X: -0.005249754525721073
+        Y: -0.056966572999954224
+        Z: -0.21569649875164032
       Focal Shape Fixed Size: true
       Focal Shape Size: 0.05000000074505806
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 0.5203981995582581
+      Pitch: 0.4053982198238373
       Target Frame: <Fixed Frame>
       Value: Orbit (rviz)
-      Yaw: 6.010405540466309
+      Yaw: 1.952217936515808
     Saved:
       - Class: rviz_default_plugins/Orbit
         Distance: 1.7432855367660522
